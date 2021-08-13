@@ -11,6 +11,17 @@
 	let audioIndex = 0;
 
 
+
+
+var vid = document.querySelector("audio");
+vid.oncanplay = function() {
+    alert("Can start playing video");
+};
+
+
+
+
+
 	let b = document.getElementById("icon");
 
 
