@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<title> Music Player </title>
+		<link rel="icon" href="images/logo.png">
+  		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="style.css">
+	</head>
+
+<body>
+
+
+
+<div class="row">
+
+<div class="col-6 images">
+	<img src="images/slide-1.jpg" width="400" id="slide">
+</div>
+
+
+<h2 class="title">  [Eklai Basera Muskuraunu Ho Maya] || New nepali song </h2>
+
+<div class="col-6 currentAudio"><br><br><br>
+
+
+<img src="images/next.png" id="pre" class="pre"> &nbsp &nbsp
+
+	<img src="images/play.png" id="icon" onclick="play()">  &nbsp &nbsp
+
+<img src="images/pre.png" id ="next" class="next"> 
+
+
+
+	<audio loop id="song">
+  		<source id="srccontainer" src="songs/maya.mp3" type="audio/mp3">
+	</audio>
+</div>
+
+</div>
+
+
+	<img src="images/logo.png" id="logo">
+
+	<img src="images/setting.png" width="70" id="setting" onclick="show()">
+
+
+
+
+<div class="dropdown">
+
+	<div class="hidden-element" id="settings">
+
+		<h1> Settings </h1> <br><br>
+		<span id="lists" onclick="visible()"><i class="fa fa-play" aria-hidden="true"></i> &nbsp  Play List </span><br><br>
+		<span id="btn-open" onclick="openModal()">  <i class="fa fa-microphone" aria-hidden="true"></i> &nbsp Volume </span><br><br>
+		<span id="rate" onclick="playSpeed()"> <i class="fa fa-circle-o-notch" aria-hidden="true"></i> &nbsp Playback Rate </span><br><br>
+	</div>
+</div>
+
+<div class="modal-content">
+
+
+<div class="modal" id="modal">
+
+	    <span class="close" onclick="close()">&times;</span>
+
+	<div class="modal-items">
+
+		<button id="zero-vol" onclick="mute()"><i class="fa fa-microphone-slash" aria-hidden="true"></i>  Mute </button>
+
+		<button id="normal-vol" onclick="halfvol()"><i class="fa fa-volume-down" aria-hidden="true"></i> Normal </button>
+
+		<button id="high-vol" onclick="fullvol()"><i class="fa fa-volume-up" aria-hidden="true"></i> Loud </button>
+
+
+</div>	
+	</div>
+</div>
+
+
+
+
+
+<div class="rate-modal">
+
+	<div class="modal-contents" id="modals">
+
+	   <span class="closer" onclick="closer()">&times;</span>
+
+	   <div class="modal-item">
+
+		<button id="fast" onclick="fast()"> Faster </button>
+		<button id="center" onclick="middle()"> Normal speed </button>
+		<button id="slow" onclick="slow()"> Slow </button>
+
+	    </div>
+
+	</div>
+
+</div>
+
+<div class="List" id="list">
+
+	    <span class="close" onclick="hide()">&times;</span>
+
+	<div class="p-logo">
+		<h3>Audio Play List</h3>
+	</div>
+	<br><br><br><br><br><br><br>
+
+	<div class="audioList">
+
+
+
+
+	<div class="song-1 types">
+		&nbsp &nbsp <i class="fa fa-music" aria-hidden="true" style="font-size: 28px">&nbsp &nbsp &nbsp 
+      		</i> <span class="contact-text" onclick="playAudio(0)"> BATASH~ Shashwot Khadka</span>
+	</div>
+
+	<br>
+
+	<div class="song-2 types">
+		&nbsp &nbsp <i class="fa fa-music" aria-hidden="true" style="font-size: 28px">&nbsp &nbsp &nbsp 
+      		</i> <span class="contact-text" onclick="playAudio(1)"> NEFFEX - Cold - [Copyright Free] </span>
+	</div>
+
+
+	<br>
+
+	<div class="song-3 types">
+		&nbsp &nbsp <i class="fa fa-music" aria-hidden="true" style="font-size: 28px">&nbsp &nbsp &nbsp 
+      		</i> <span class="contact-text" onclick="playAudio(2)"> NEFFEX - Grateful [Copyright Free] </span>
+	</div>
+
+	
+	<br>
+
+	<div class="song-4 types">
+		&nbsp &nbsp <i class="fa fa-music" aria-hidden="true" style="font-size: 28px">&nbsp &nbsp &nbsp 
+      		</i> <span class="contact-text" onclick="playAudio(3)"> 24kGoldn - Mood ft. iann dior </span>
+	</div>
+
+
+	<br>
+
+	<div class="song-5 types">
+		&nbsp &nbsp <i class="fa fa-music" aria-hidden="true" style="font-size: 28px">&nbsp &nbsp &nbsp 
+      		</i> <span class="contact-text" onclick="playAudio(4)"> Pink Sweat$ - At My Worst - Audio </span>
+	</div>
+
+
+
+	<br>
+
+	<div class="song-6 types">
+		&nbsp &nbsp <i class="fa fa-music" aria-hidden="true" style="font-size: 28px">&nbsp &nbsp &nbsp 
+      		</i> <span class="contact-text" onclick="playAudio(5)"> Timro Mann Ma A Kancha Official MV</span>
+	</div>
+
+
+	<br>
+
+	<div class="song-7 types">
+		&nbsp &nbsp <i class="fa fa-music" aria-hidden="true" style="font-size: 28px">&nbsp &nbsp &nbsp 
+      		</i> <span class="contact-text" onclick="playAudio(6)"> Ali Gatie - It's You - Male version</span>
+	</div>
+
+
+	<div class="song-8 types">
+		&nbsp &nbsp <i class="fa fa-music" aria-hidden="true" style="font-size: 28px">&nbsp &nbsp &nbsp 
+      		</i> <span class="contact-text" onclick="playAudio(7)"> BEEST - Sapana Haru Ferdai </span>
+	</div>
+
+
+	<div class="song-9 types">
+		&nbsp &nbsp <i class="fa fa-music" aria-hidden="true" style="font-size: 28px">&nbsp &nbsp &nbsp 
+      		</i> <span class="contact-text" onclick="playAudio(8)">  Maya - Ashutosh KC </span>
+	</div>
+
+	<br><br>
+	<p>&copy;  All Rights Reserved music 2021</p>
+	</div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
